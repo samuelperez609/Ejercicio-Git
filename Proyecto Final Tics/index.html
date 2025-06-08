@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panadería y Pastelería Las Violetas</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Font Awesome para íconos (incluye ícono de WhatsApp) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-KY4sI4i6kzQ0m6aUPH0vjMdex+U6tv4B+JzYlMCPH53tJekMZK5T7ZoqKqQ4p6jh3ZzzcW2bGqkaJZOKdxKeWw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebd5a;
+    }
+
+    .index {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .index img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Encabezado y navegación -->
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="Productos.html">Productos</a>
+      <a href="Quiénes somos.html">Quiénes Somos</a>
+      <a href="Misión.html">Misión</a>
+      <a href="Visión.html">Visión</a>
+      <a href="Contactanos.html">Contáctanos</a>
+      <a href="Formulario.html">Formulario</a>
+      <a href="Carrito.html">Carrito</a>
+      <a href="Galeria.html">Galeria</a>
+    </nav>
+  </header> 
+
+  <!-- Contenido principal -->
+  <h1>Panadería Las Violetas</h1>
+  <h2>Te ofrecemos lo mejor</h2>
+  <p>
+    En nuestra panadería encuentras la mejor calidad de pan, pasteles y mucho más para que disfrutes momentos especiales con tu familia.
+  </p>
+
+  <div class="index">
+    <img src="Imagenes/violetas.jpg" alt="Violetas">
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a
+    href="https://wa.me/50279648600?text=Hola%2C%20me%20gustaría%20saber%20más%20sobre%20sus%20productos"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>

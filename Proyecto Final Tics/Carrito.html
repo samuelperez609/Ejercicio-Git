@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito - Panadería Las Violetas</title>
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #2c3e50;
+    }
+
+    /* Encabezado y navegación */
+    header {
+      background-color: #34495e;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2980b9;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #2c3e50;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .contenedor-productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .producto {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .producto h3 {
+      margin: 0 0 10px;
+      color: #34495e;
+    }
+
+    .producto p {
+      margin: 0 0 10px;
+      color: #2980b9;
+      font-weight: bold;
+    }
+
+    .producto button {
+      padding: 8px 12px;
+      background-color: #9b59b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .producto button:hover {
+      background-color: #7e3ea5;
+    }
+
+    .carrito {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .carrito ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+
+    .carrito li {
+      padding: 6px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .carrito p {
+      text-align: right;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    .carrito button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 16px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .carrito button:hover {
+      background-color: #1e8449;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ecf0f1;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="Productos.html">Productos</a>
+      <a href="Quiénes somos.html">Quiénes Somos</a>
+      <a href="Misión.html">Misión</a>
+      <a href="Visión.html">Visión</a>
+      <a href="Contactanos.html">Contáctanos</a>
+      <a href="Formulario.html">Formulario</a>
+      <a href="Carrito.html">Carrito</a>
+      <a href="Galeria.html">Galeria</a>
+    </nav>
+  </header>
+
+  <!-- Título principal -->
+  <h1>Carrito de Compras</h1>
+
+  <!-- Productos -->
+  <div class="contenedor-productos">
+    <div class="producto">
+      <h3>Pan Francés</h3>
+      <p>Q1.00</p>
+      <button onclick="agregarAlCarrito('Pan Francés', 1.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Concha</h3>
+      <p>Q1.50</p>
+      <button onclick="agregarAlCarrito('Concha', 1.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pan Pirujo</h3>
+      <p>Q2.00</p>
+      <button onclick="agregarAlCarrito('Pan Pirujo', 2.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pan Dulce</h3>
+      <p>Q2.50</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 2.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Bollo de Canela</h3>
+      <p>Q5</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 5)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pan de Elote</h3>
+      <p>Q2.50</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 2.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pan de Maíz</h3>
+      <p>Q2.50</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 2.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pan Integral</h3>
+      <p>Q3.50</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 3.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pan de Trigo</h3>
+      <p>Q2.50</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 2.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Magdalenas</h3>
+      <p>Q1.50</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 1.50)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pastel de Violeta y Limón</h3>
+      <p>Q150</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 150)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pastel de Violeta y Chocolate</h3>
+      <p>Q175</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 175)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pastel de Tres Leches</h3>
+      <p>Q165</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 165)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pastel de Zanahoria</h3>
+      <p>Q180</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 180)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pastel de Chocolate</h3>
+      <p>Q160</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 160)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pastel de Fresa</h3>
+      <p>Q180</p>
+      <button onclick="agregarAlCarrito('Pan Dulce', 180)">Agregar</button>
+    </div>
+  </div>
+
+  <!-- Carrito -->
+  <div class="carrito">
+    <h2>Resumen del Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: Q<span id="total">0.00</span></p>
+    <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Panadería Las Violetas de Chiquimula. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      mostrarCarrito();
+    }
+
+    function mostrarCarrito() {
+      const lista = document.getElementById("lista-carrito");
+      lista.innerHTML = "";
+      let total = 0;
+      carrito.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nombre} - Q${item.precio.toFixed(2)}`;
+        lista.appendChild(li);
+        total += item.precio;
+      });
+      document.getElementById("total").textContent = total.toFixed(2);
+    }
+
+    function enviarPedido() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      let mensaje = "Hola, quiero hacer un pedido:\n";
+      carrito.forEach(item => {
+        mensaje += `- ${item.nombre}: Q${item.precio.toFixed(2)}\n`;
+      });
+
+      let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+      mensaje += `Total: Q${total.toFixed(2)}`;
+
+      const numero = "50279648600"; // sin el + en el enlace
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp flotante</title>
+    <style>
+        /* Estilo del botón flotante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+        .whatsapp-float i {
+            margin-top: 15px;
+        }
+    </style>
+
+    <!-- Enlace a Font Awesome para el ícono (opcional) -->
+    <link rel="stylesheet" href="file:///C:/Users/Samy/Downloads/Proyecto%20Final%20Tics/index.html">
+</head>
+<body>
+
+    <!-- Contenido de tu página -->
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/+502 7964 8600?text=Hola%20le%20gustaría%20saber%20más%20sobre%20nuestros%20productos" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
