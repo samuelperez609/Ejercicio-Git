@@ -3,42 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contáctanos - Panadería Las Violteas</title>
+  <title>Contáctanos | Panadería Las Violetas</title>
 
-  <!-- Font Awesome para ícono de WhatsApp -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yFk4TDdVNEcA+u8G99YzN4Ds1QjD3g5nN4h4sk5ZhRPNnJgRfFeqjvLt1QGH6LR4NqCbb69d1NBBZ5gRmQ9lXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
+    /* Fondo igual a Misión (imagen + overlay) */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f7fa;
+      background-image: url('Imagenes/violet.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
       color: #2c3e50;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(3px);
+      z-index: -1;
     }
 
     header {
-      background-color: #34495e;
-      padding: 10px 0 30px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #34495ee6;
+      padding: 40px 20px 20px;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #ecf0f1;
     }
 
     header h1 {
-      color: #ecf0f1;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 2.5em;
     }
 
     header p {
+      margin-top: 10px;
+      font-size: 1.1em;
       color: #bdc3c7;
-      margin: 0;
     }
 
     nav {
       display: flex;
       justify-content: center;
+      gap: 15px;
+      padding: 10px 0 20px;
       flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 10px;
     }
 
     nav a {
@@ -55,68 +72,79 @@
     }
 
     main {
-      padding: 20px;
+      padding: 30px;
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
+      background: #ffffffd9;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: #34495e;
     }
 
     h2 {
       text-align: center;
       color: #2980b9;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .contacto-container {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
+    form label {
       display: block;
-      margin-top: 15px;
+      margin-top: 20px;
       font-weight: bold;
     }
 
-    input, textarea {
+    form input,
+    form textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 1em;
+      resize: vertical;
+      font-family: inherit;
     }
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
+    form button {
+      margin-top: 25px;
+      padding: 12px 25px;
       background-color: #2980b9;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 1.1em;
+      transition: background-color 0.3s;
     }
 
-    button:hover {
+    form button:hover {
       background-color: #1f6391;
     }
 
     .info {
-      margin-top: 30px;
+      margin-top: 40px;
+      font-size: 1em;
+      line-height: 1.5;
+      color: #34495e;
     }
 
     .info h3 {
       color: #2980b9;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      margin: 6px 0;
     }
 
     iframe {
       width: 100%;
       height: 300px;
-      margin-top: 20px;
+      margin-top: 25px;
       border: none;
-      border-radius: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -129,7 +157,6 @@
       box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }
 
-    /* Botón flotante de WhatsApp */
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -154,7 +181,6 @@
 </head>
 
 <body>
-
   <header>
     <h1>Panadería Las Violetas</h1>
     <p>¡Del horno a tu mesa!</p>
@@ -173,37 +199,36 @@
   <main>
     <h2>Contáctanos</h2>
 
-    <div class="contacto-container">
-      <form action="mailto:contacto@lasvioletas.com" method="POST" enctype="text/plain">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <form action="mailto:contacto@lasvioletas.com" method="POST" enctype="text/plain" novalidate>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-        <button type="submit">Enviar</button>
-      </form>
+      <button type="submit">Enviar</button>
+    </form>
 
-      <div class="info">
-        <h3>También puedes visitarnos:</h3>
-        <p><strong>Dirección:</strong> 7a avenida 4-80 zona 1, Chiquimula, Guatemala</p>
-        <p><strong>Teléfono:</strong> +502 7964 8600</p>
-        <p><strong>Email:</strong> lasvioletas1962@yahoo.com</p>
+    <div class="info">
+      <h3>También puedes visitarnos:</h3>
+      <p><strong>Dirección:</strong> 7a avenida 4-80 zona 1, Chiquimula, Guatemala</p>
+      <p><strong>Teléfono:</strong> +502 7964 8600</p>
+      <p><strong>Email:</strong> lasvioletas1962@yahoo.com</p>
 
-        <iframe 
-          src="https://www.google.com/maps?q=7a+Avenida+4-80,+Zona+1,+Chiquimula,+Guatemala&output=embed"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-      </div>
+      <iframe 
+        src="https://www.google.com/maps?q=7a+Avenida+4-80,+Zona+1,+Chiquimula,+Guatemala&output=embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </main>
 
   <footer>
-    &copy; 2025 Panadería Las Violteas. Todos los derechos reservados.
+    &copy; 2025 Panadería Las Violetas de Chiquimula. Todos los derechos reservados.
   </footer>
 
   <!-- Botón flotante de WhatsApp -->
@@ -211,6 +236,5 @@
      class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
-
 </body>
 </html>

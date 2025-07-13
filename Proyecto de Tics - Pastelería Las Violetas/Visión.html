@@ -5,37 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Visión | Panadería Las Violetas</title>
 
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
   <style>
+    /* === FONDO IGUAL A QUIÉNES SOMOS === */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f7fa;
+      background-image: url('Imagenes/violet.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
       color: #2c3e50;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
     header {
-      background-color: #34495e;
-      padding: 10px 0 30px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #34495ee6;
+      padding: 40px 20px 20px;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #ecf0f1;
     }
 
     header h1 {
-      color: #ecf0f1;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 2.5em;
     }
 
     header p {
+      margin-top: 10px;
+      font-size: 1.1em;
       color: #bdc3c7;
-      margin: 0;
     }
 
     nav {
       display: flex;
       justify-content: center;
+      gap: 15px;
+      padding: 10px 0 20px;
       flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 10px;
     }
 
     nav a {
@@ -52,9 +71,12 @@
     }
 
     main {
-      padding: 20px;
+      padding: 30px;
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
+      background: #ffffffd9;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
@@ -114,9 +136,6 @@
       background-color: #1ebc59;
     }
   </style>
-
-  <!-- Font Awesome para ícono de WhatsApp -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>

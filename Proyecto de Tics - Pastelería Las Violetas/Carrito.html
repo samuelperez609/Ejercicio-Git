@@ -9,20 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
 
   <style>
-    /* ——— Estilos base ——— */
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#f4f7fa;
-      color:#2c3e50;
+    /* ——— Fondo con imagen + overlay ——— */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('Imagenes/violet.jpg'); /* igual que Contactanos */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      color: #2c3e50;
+      min-height: 100vh;
+      position: relative;
+      z-index: 0;
     }
 
-    /* ——— Encabezado & navegación ——— */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
+    /* ——— Estilos base ——— */
+    /* (mantenemos los estilos originales del carrito para que se vean bien sobre el fondo) */
+    /* Encabezado & navegación */
     header{
-      background:#34495e;
+      background:#34495ee6; /* color con transparencia para que deje ver un poco el fondo */
       padding:10px 0 30px;
       box-shadow:0 2px 4px rgba(0,0,0,.1);
       text-align:center;
+      color:#ecf0f1;
+      position: relative;
+      z-index: 1;
     }
     header h1{color:#ecf0f1;margin:0 0 5px}
     header p{color:#bdc3c7;margin:0}
@@ -33,6 +54,8 @@
       gap:20px;
       flex-wrap:wrap;
       margin-top:10px;
+      position: relative;
+      z-index: 1;
     }
     nav a{
       color:#ecf0f1;
@@ -44,17 +67,19 @@
     }
     nav a:hover{background:#2980b9}
 
-    /* ——— Títulos ——— */
+    /* Títulos */
     h1{text-align:center;margin:40px 0 20px}
     h2{text-align:center;color:#2980b9;margin:40px 0 20px}
 
-    /* ——— Tarjetas de producto ——— */
+    /* Tarjetas de producto */
     .contenedor-productos{
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
       gap:20px;
       padding:0 20px;
+      position: relative;
+      z-index: 1;
     }
     .producto{
       background:#fff;
@@ -77,14 +102,16 @@
     }
     .producto button:hover{background:#7e3ea5}
 
-    /* ——— Caja de carrito ——— */
+    /* Caja de carrito */
     .carrito{
       max-width:600px;
       margin:40px auto;
-      background:#fff;
+      background:#ffffffd9; /* fondo blanco semitransparente para que se vea el fondo */
       padding:20px;
       border-radius:10px;
       box-shadow:0 0 10px rgba(0,0,0,.1);
+      position: relative;
+      z-index: 1;
     }
     .carrito ul{list-style:none;padding:0;margin-bottom:15px}
     .carrito li{padding:6px 0;border-bottom:1px solid #ccc}
@@ -101,7 +128,7 @@
     }
     .carrito button:hover{background:#1e8449}
 
-    /* ——— Pie de página ——— */
+    /* Pie de página */
     footer{
       text-align:center;
       padding:20px;
@@ -110,9 +137,11 @@
       font-size:.9em;
       margin-top:50px;
       box-shadow:0 -2px 4px rgba(0,0,0,.05);
+      position: relative;
+      z-index: 1;
     }
 
-    /* ——— Botón flotante WhatsApp ——— */
+    /* Botón flotante WhatsApp */
     .whatsapp-float{
       position:fixed;
       width:60px;height:60px;
