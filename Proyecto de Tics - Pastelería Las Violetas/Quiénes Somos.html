@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contáctanos | Panadería Las Violetas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiénes Somos - Panadería Las Violetas</title>
 
   <!-- Íconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
-    /* Fondo igual a Misión (imagen + overlay) */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -19,7 +18,6 @@
       background-position: center;
       background-attachment: fixed;
       color: #2c3e50;
-      min-height: 100vh;
     }
 
     body::before {
@@ -33,10 +31,10 @@
 
     header {
       background-color: #34495ee6;
+      color: #ecf0f1;
       padding: 40px 20px 20px;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      color: #ecf0f1;
     }
 
     header h1 {
@@ -71,88 +69,54 @@
       background-color: #2980b9;
     }
 
-    main {
-      padding: 30px;
+    .container {
       max-width: 1000px;
       margin: 40px auto;
+      padding: 20px;
       background: #ffffffd9;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      color: #34495e;
     }
 
-    h2 {
-      text-align: center;
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+    }
+
+    .about-text h2 {
       color: #2980b9;
-      margin-bottom: 30px;
+      font-size: 2em;
+      margin-bottom: 20px;
     }
 
-    form label {
-      display: block;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    form button {
-      margin-top: 25px;
-      padding: 12px 25px;
-      background-color: #2980b9;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+    .about-text p {
       font-size: 1.1em;
-      transition: background-color 0.3s;
-    }
-
-    form button:hover {
-      background-color: #1f6391;
-    }
-
-    .info {
-      margin-top: 40px;
-      font-size: 1em;
-      line-height: 1.5;
+      line-height: 1.7;
       color: #34495e;
     }
 
-    .info h3 {
-      color: #2980b9;
-      margin-bottom: 10px;
+    .about-img {
+      flex: 1 1 400px;
     }
 
-    .info p {
-      margin: 6px 0;
-    }
-
-    iframe {
+    .about-img img {
       width: 100%;
-      height: 300px;
-      margin-top: 25px;
-      border: none;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     footer {
       text-align: center;
       padding: 20px;
       background-color: #ecf0f1;
-      color: #2c3e50;
       font-size: 0.9em;
+      color: #2c3e50;
       margin-top: 50px;
       box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }
@@ -163,7 +127,7 @@
       height: 60px;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
+      background-color: #25D366;
       color: white;
       border-radius: 50%;
       text-align: center;
@@ -181,60 +145,43 @@
 </head>
 
 <body>
+
   <header>
     <h1>Panadería Las Violetas</h1>
     <p>¡Del horno a tu mesa!</p>
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="Productos.html">Productos</a>
-      <a href="quienes-somos.html">Quiénes Somos</a>
-      <a href="Misión.html">Misión</a>
-      <a href="Visión.html">Visión</a>
-      <a href="Contactanos.html">Contáctanos</a>
-      <a href="Carrito.html">Carrito</a>
-      <a href="Galeria.html">Galería</a>
+      <a href="productos.html">Productos</a>
+      <a href="quienes-somos.html">¿Quiénes Somos?</a>
+      <a href="mision.html">Misión</a>
+      <a href="vision.html">Visión</a>
+      <a href="contactanos.html">Contáctanos</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="galeria.html">Galería</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Contáctanos</h2>
-
-    <form action="mailto:contacto@lasvioletas.com" method="POST" enctype="text/plain" novalidate>
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" id="correo" name="correo" required>
-
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-
-    <div class="info">
-      <h3>También puedes visitarnos:</h3>
-      <p><strong>Dirección:</strong> 7a avenida 4-80 zona 1, Chiquimula, Guatemala</p>
-      <p><strong>Teléfono:</strong> +502 7964 8600</p>
-      <p><strong>Email:</strong> lasvioletas1962@yahoo.com</p>
-
-      <iframe 
-        src="https://www.google.com/maps?q=7a+Avenida+4-80,+Zona+1,+Chiquimula,+Guatemala&output=embed"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+  <div class="container">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>¿Quiénes Somos?</h2>
+        <p>Panadería Las Violetas de Chiquimula es una empresa familiar fundada con el amor y el deseo de compartir el auténtico sabor chiquimulteco. Nuestra pasión por el pan artesanal y las recetas tradicionales nos ha convertido en un referente local.</p>
+        <p>Nos dedicamos a crear productos horneados con ingredientes frescos, técnicas caseras y el compromiso de brindar una experiencia deliciosa a cada cliente. Somos más que una panadería: somos una tradición viva que endulza la vida de quienes nos visitan cada día.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Panadería tradicional">
+      </div>
     </div>
-  </main>
+  </div>
 
   <footer>
     &copy; 2025 Panadería Las Violetas de Chiquimula. Todos los derechos reservados.
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/50279648600?text=Hola%2C%20me%20gustaría%20saber%20más%20sobre%20sus%20productos"
      class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
 </body>
 </html>
